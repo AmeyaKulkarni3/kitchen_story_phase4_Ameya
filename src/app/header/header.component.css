@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+
+.brand {
+  font-family: "Yellowtail", cursive;
+  font-size: 30px;
+  color: rgb(255, 81, 0);
+}
+
+.header-color {
+  background-color: rgb(255, 204, 184);
+}
+
+.text-bold {
+  font-weight:500;
+}

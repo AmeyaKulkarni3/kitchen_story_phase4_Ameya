@@ -1,0 +1,27 @@
+<div class="row" style="display: flex; width: 550px">
+  <div
+    *ngIf="!searchClicked"
+    class="col list-group"
+    style="height: fit-content"
+  >
+    <app-food-item
+      *ngFor="let item of foodItems; let i = index"
+      [item]="item"
+      [index]="i"
+    ></app-food-item>
+  </div>
+  <div
+    *ngIf="searchClicked && searchedItems.length === 0"
+    style="height: fit-content;"
+  >
+    <h6>No Items Available! We regret the inconvenience.</h6>
+    <h6>Please search another item.</h6>
+  </div>
+  <div *ngIf="searchClicked" class="col list-group" style="height: fit-content">
+    <app-food-item
+      *ngFor="let item of searchedItems; let i = index"
+      [item]="item"
+      [index]="i"
+    ></app-food-item>
+  </div>
+</div>

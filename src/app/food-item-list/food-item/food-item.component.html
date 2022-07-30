@@ -1,0 +1,24 @@
+<div
+  class="list-group-item clearfix a-tag-style"
+>
+    <div class="row">
+        <div class="col-3">
+            <img
+              [src]="item.imageUrl"
+              alt="{{ item.name }}"
+              class="img-responsive"
+              style="max-height: 80px;"
+            />
+            <button type="button" class="btn btn-secondary btn-sm" style="margin-top: 5px;color:white" (click)="onAddToCart(item)">Add to Cart</button>
+          </div>
+        <div class="col-9">
+            <h5 class="list-group-item-heading">{{ item.name }}</h5>
+            <p class="list-group-item-text">
+              Price/{{ item.unitOfMeasure }} : {{ item.price | currency: "INR" }}
+            </p>
+            <p class="list-group-item-text mt-1">{{ item.category }}
+          </div>
+          
+    </div>
+  
+  </div>

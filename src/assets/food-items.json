@@ -1,0 +1,69 @@
+[
+    {
+        "id": 1,
+        "categoryId": 101,
+        "unitOfMeasureId": 1001,
+        "quantity": 500,
+        "name": "Potatoes",
+        "imageUrl" : "../../assets/img/foodPlaceholder.png",
+        "price": 30,
+        "category": "Vegetables",
+        "unitOfMeasure": "kg"
+    },
+    {
+        "id": 2,
+        "categoryId": 101,
+        "unitOfMeasureId": 1001,
+        "quantity": 500,
+        "name": "Tomatoes",
+        "imageUrl" : "../../assets/img/foodPlaceholder.png",
+        "price": 40,
+        "category": "Vegetables",
+        "unitOfMeasure": "kg"
+    },
+    {
+        "id": 3,
+        "categoryId": 102,
+        "unitOfMeasureId": 1001,
+        "quantity": 500,
+        "name": "Washington Apples",
+        "imageUrl" : "../../assets/img/foodPlaceholder.png",
+        "price": 240,
+        "category": "Fruits",
+        "unitOfMeasure": "kg"
+    },
+    {
+        "id": 4,
+        "categoryId": 102,
+        "unitOfMeasureId": 1001,
+        "quantity": 500,
+        "name": "Kashmir Apples",
+        "imageUrl" : "../../assets/img/foodPlaceholder.png",
+        "price": 220,
+        "category": "Fruits",
+        "unitOfMeasure": "kg"
+    },
+    {
+        "id": 5,
+        "categoryId": 103,
+        "unitOfMeasureId": 1002,
+        "quantity": 500,
+        "name": "Lays Classic Salted Potato Chips(100g)",
+        "imageUrl" : "../../assets/img/foodPlaceholder.png",
+        "price": 30,
+        "category": "Snacks",
+        "unitOfMeasure": "Nos"
+    },
+    {
+        "id": 6,
+        "categoryId": 104,
+        "unitOfMeasureId": 1002,
+        "quantity": 500,
+        "name": "Gemini Sunflower Oil(1L)",
+        "imageUrl" : "../../assets/img/foodPlaceholder.png",
+        "price": 190,
+        "category": "Groceries",
+        "unitOfMeasure": "Nos"
+    }
+
+]
