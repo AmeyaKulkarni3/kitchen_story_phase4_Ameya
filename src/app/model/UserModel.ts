@@ -1,13 +1,13 @@
-import { Order } from "./Order";
+import { Order } from './Order';
 
 export class UserModel {
   id: number = 0;
-  displayName: string = "";
-  email: string = "";
-  password: string = "";
-  address: string  = "";
+  displayName: string = '';
+  email: string = '';
+  password: string = '';
+  address: string = '';
   balance: number = 0;
-  orders : Order[] = [];
+  orders: Order[] = [];
 
   constructor() {
     // if (data) {

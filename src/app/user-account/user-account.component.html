@@ -1,5 +1,5 @@
 <div>
-    <h4 style="text-align:center ;">Welcome {{username}}!</h4>
+    <h4 style="text-align:center ;">Welcome {{loggedInUser.displayName}}</h4>
     <h6>Email: {{loggedInUser.email}}</h6>
     <h6>Current Balance: {{loggedInUser.balance | currency:'INR'}}</h6>
     <h6>Address: {{loggedInUser.address}}</h6>

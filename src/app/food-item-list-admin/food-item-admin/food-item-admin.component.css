@@ -1,0 +1,12 @@
+.a-tag-style {
+    cursor: pointer;
+    border-radius: 5px;
+    border-color: rgb(255, 204, 184);
+  }
+  
+  .btn-style{
+      background-color: rgb(255, 204, 184);
+      margin-top: 5px;
+      font-weight:500;
+  }
+  

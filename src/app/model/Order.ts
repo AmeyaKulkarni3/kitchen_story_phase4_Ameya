@@ -1,18 +1,13 @@
-import { Item } from "./Item";
+import { Cart } from "./Cart";
+import { CartItem } from "./CartItem";
 
 export class Order {
-    id : number;
+    id : number = 0;
     date : Date;
-    items : Item[]
-    total : number;
+    cart : CartItem[] = [];
+    orderValue : number = 0;
 
-    constructor(data : Order){
-        this.id = data.id;
-        this.date = data.date;
-        this.items = [];
-        data.items.forEach(i => {
-            this.items.push(i);
-        });
-        this.total = data.total;
+    constructor(){
+        
     }
 }

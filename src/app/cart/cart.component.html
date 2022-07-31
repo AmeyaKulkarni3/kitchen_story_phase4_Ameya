@@ -1,0 +1,22 @@
+<p *ngIf="cart.total === 0" class="text-center">No items added to the Cart</p>
+<div *ngIf="cart.total !== 0 && !cart.purchaseComplete" class="container text-center">
+  <h6 *ngIf="cart.total !== 0" style="text-align: center">My Cart</h6>
+  <div class="row" *ngFor="let item of cart.items | keyvalue">
+    <div *ngIf="item.value !== 0" class="col-4">
+      {{ item.key.name }}
+    </div>
+    <div *ngIf="item.value !== 0" class="col-1">X</div>
+    <div *ngIf="item.value !== 0" class="col-1">
+      {{ item.value }}
+    </div>
+    <div *ngIf="item.value !== 0" class="col">
+      {{ item.key.price * item.value | currency: "INR" }}
+    </div>
+    <div *ngIf="item.value !== 0" class="col-2">
+        <button class="button-style" (click)="onRemoveItem(item.key)">-</button>
+    </div>
+  </div>
+  <br />
+  <h6 *ngIf="cart.total !== 0" style="text-align: center">Total : {{ cart.total | currency: "INR" }}</h6>
+  <button *ngIf="cart.total !== 0" type="button" class="btn btn-primary mt-3" (click) ="onPurchase()">Purchase</button>
+</div>

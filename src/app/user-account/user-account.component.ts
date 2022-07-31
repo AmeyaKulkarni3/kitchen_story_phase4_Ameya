@@ -12,12 +12,15 @@ export class UserAccountComponent implements OnInit {
 
   constructor(private userService : UserService) { }
 
-  loggedInUser= JSON.parse(localStorage.getItem(StorageContants.USER)!);
+  loggedInUser = JSON.parse(localStorage.getItem(StorageContants.USER)!);
      
-  username = this.loggedInUser.displayName;
+  // username = this.loggedInUser.displayName;
 
   ngOnInit(): void {
-
+    this.userService.userObs.subscribe(user => {
+      this.loggedInUser = JSON.parse(user);
+      console.log(this.loggedInUser);
+    });
   }
 
 }

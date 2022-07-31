@@ -11,6 +11,16 @@ import { UserHomeComponent } from './user-home/user-home.component';
 import { UserAccountComponent } from './user-account/user-account.component';
 import { FoodItemListComponent } from './food-item-list/food-item-list.component';
 import { FoodItemComponent } from './food-item-list/food-item/food-item.component';
+import { CartComponent } from './cart/cart.component';
+import { PurchaseComponent } from './purchase/purchase.component';
+import {ModalModule} from 'ngx-bootstrap/modal';
+import { OrderListComponent } from './order-list/order-list.component';
+import { OrderItemComponent } from './order-list/order-item/order-item.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { FoodItemListAdminComponent } from './food-item-list-admin/food-item-list-admin.component';
+import { FoodItemAdminComponent } from './food-item-list-admin/food-item-admin/food-item-admin.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { AddItemComponent } from './add-item/add-item.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +32,21 @@ import { FoodItemComponent } from './food-item-list/food-item/food-item.componen
     UserAccountComponent,
     FoodItemListComponent,
     FoodItemComponent,
+    CartComponent,
+    PurchaseComponent,
+    OrderListComponent,
+    OrderItemComponent,
+    AdminHomeComponent,
+    FoodItemListAdminComponent,
+    FoodItemAdminComponent,
+    ChangePasswordComponent,
+    AddItemComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

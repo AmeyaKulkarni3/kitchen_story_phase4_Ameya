@@ -1,0 +1,9 @@
+<div style="display: flex; width: 550px">
+  <div class="list-group" style="height: fit-content">
+    <app-food-item-admin
+      *ngFor="let item of items; let i = index"
+      [item]="item"
+      [index]="i"
+    ></app-food-item-admin>
+  </div>
+</div>

@@ -1,0 +1,3 @@
+<div style="text-align:center;" *ngIf="orders">
+  <app-order-item *ngFor="let order of orders; let i = index" [order]="order" [index] = "i" ></app-order-item>
+</div>

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Item } from '../model/Item';
+import { UserModel } from '../model/UserModel';
 import { ItemService } from '../services/item.service';
+import { UserService } from '../services/user.service';
+import { StorageContants } from '../shared/contants';
 
 @Component({
   selector: 'app-user-home',
@@ -13,10 +16,24 @@ export class UserHomeComponent implements OnInit {
   searchClicked = false;
 
   searchedItems : Item[] = [];
+  
 
-  constructor(private itemService : ItemService) { }
+  constructor(private itemService : ItemService, private userService:UserService) { }
+
+  loggedInUser = JSON.parse(this.userService.getLoggedInUser() || "");
+
+  admin = localStorage.getItem(StorageContants.ADMIN);
+
+  isAdmin = this.admin === "true" ? true : false;
 
   ngOnInit(): void {
+    this.userService.userObs.subscribe(user => {
+      this.loggedInUser = JSON.parse(user);
+    })
+    console.log(this.loggedInUser);
+    console.log(this.loggedInUser.orders);
+    
+    
   }
 
   onSubmit(form : NgForm){

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, observable, Subject } from 'rxjs';
 import { Cart } from '../model/Cart';
 import { Item } from '../model/Item';
 
@@ -7,6 +8,9 @@ import { Item } from '../model/Item';
 })
 export class CartService {
   cart: Cart = new Cart();
+
+  cartObservable = new Subject<Cart>();
+  cartObs = this.cartObservable.asObservable();
 
   constructor() {}
 
@@ -23,5 +27,24 @@ export class CartService {
       }
       this.cart.total += item.price;
     }
+
+    this.cartObservable.next(this.cart);
+
+  }
+
+  removeItemFromCart(item:Item){
+    
+    this.cart.items.forEach((value,key) => {
+      if(key.id === item.id){
+        this.cart.items.set(key,value-1);
+      }
+      this.cart.total -= key.price;
+    });
+    this.cartObservable.next(this.cart);
+  }
+
+  completePurchase(){
+    this.cart = new Cart();
+    this.cartObservable.next(this.cart);
   }
 }

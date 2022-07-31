@@ -1,0 +1,17 @@
+<div>Order Number {{index + 1}}</div>
+<div>Ordered On {{orderDate}}</div>
+<div class="row" *ngFor="let item of cartItems" style="font-weight: bolder;">
+  <div *ngIf="item.quantity !== 0" class="col-6">
+    {{ item.itemName }}
+  </div>
+  <div *ngIf="item.quantity !== 0" class="col-1">X</div>
+  <div *ngIf="item.quantity !== 0" class="col-1">
+    {{ item.quantity }}
+  </div>
+  <div *ngIf="item.quantity !== 0" class="col-3 float-left">
+    {{ item.total | currency: "INR" }}
+  </div>
+</div>
+<div style="font-weight: bolder;">Order Value {{order.orderValue | currency:'INR'}}</div>
+<div>Delivered to {{address}}</div>
+<hr>

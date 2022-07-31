@@ -1,0 +1,13 @@
+<div class="container custom-background" style="text-align: center;border-radius: 10px;">
+    <h5 class="mt-1">Confirm Purchase</h5>
+    <hr>
+    <h6>Cart Total</h6>
+    {{cart.total | currency:'INR'}}
+    <h6>Available Balance</h6>
+    {{user.balance | currency:'INR'}}
+    <hr>
+    <h6 *ngIf="cart.total > user.balance">You don't have enough balance. Please remove items from your cart.</h6>
+    <h6 *ngIf="cart.total <= user.balance">You can proceed with purchase</h6>
+    <button type="button" class="btn btn-primary" *ngIf="cart.total <= user.balance" (click)="onConfirm()">Confirm</button>
+    <button type="button" class="btn btn-danger" *ngIf="cart.total > user.balance">Back</button>
+</div>

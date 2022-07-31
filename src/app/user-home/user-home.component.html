@@ -1,11 +1,21 @@
-<div class="container-fluid mt-4 alignment">
+<div *ngIf="!isAdmin" class="container-fluid mt-4 alignment">
   <div class="row">
-    <div
-      class="col-3 me-2 custom-background"
-      style="border-radius: 0 10px 10px 0; height: fit-content"
-    >
-      <app-user-account></app-user-account>
+    <div class="col-3" style="padding-left: 0">
+      <div
+        class="custom-background"
+        style="border-radius: 0 10px 10px 0; height: fit-content"
+      >
+        <app-user-account></app-user-account>
+      </div>
+      <div
+      *ngIf="loggedInUser.orders.length > 0"
+        class="mt-4 custom-background"
+        style="border-radius: 0 10px 10px 0; height: fit-content; padding: 5px;"
+      >
+        <app-order-list></app-order-list>
+      </div>
     </div>
+
     <div class="col ms-2 me-2 custom-background shopping-area-style">
       <div class="shopping-area-top-style">
         <h3>The Supermarket Experince!</h3>
@@ -20,24 +30,34 @@
             name="search"
             #search="ngModel"
           />
-          <button *ngIf="!searchClicked" class="btn btn-primary mt-2">Search</button>
-          <button *ngIf="searchClicked" class="btn btn-primary mt-2" (click) = "onBack()">Back</button>
+          <button *ngIf="!searchClicked" class="btn btn-primary mt-2">
+            Search
+          </button>
+          <button
+            *ngIf="searchClicked"
+            class="btn btn-primary mt-2"
+            (click)="onBack()"
+          >
+            Back
+          </button>
         </form>
         <hr class="mt-3" />
       </div>
       <div class="item-list-style">
-        <app-food-item-list [searchedItems] = "searchedItems" [searchClicked]="searchClicked"></app-food-item-list>
+        <app-food-item-list
+          [searchedItems]="searchedItems"
+          [searchClicked]="searchClicked"
+        ></app-food-item-list>
       </div>
     </div>
     <div
       class="col-3 ms-2 custom-background"
       style="border-radius: 10px 0 0 10px; height: fit-content"
     >
-      <img
-        src="../../assets/img/foodPlaceholder.png"
-        class="img-responsive"
-        style="max-height: 50px"
-      />
+      <app-cart></app-cart>
     </div>
   </div>
+</div>
+<div *ngIf="isAdmin">
+  <app-admin-home></app-admin-home>
 </div>
