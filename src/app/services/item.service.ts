@@ -25,4 +25,32 @@ export class ItemService {
     this.items.push(item);
     this.itemObservable.next(this.items);
   }
+
+  updateItem(item:Item){
+    this.items.forEach(it => {
+      if(it.id === item.id){
+        it.name = item.name;
+        it.category = item.category;
+        it.price = item.price;
+        it.quantity = item.quantity;
+        it.unitOfMeasure = item.unitOfMeasure;
+      }
+    });
+    console.log(this.items);
+    this.itemObservable.next(this.items);
+  }
+
+  removeItem(id:number){
+    console.log(id);
+    let index = -1;
+    this.items.forEach(item => {
+      index++;
+      if(item.id === id){
+        this.items.splice(index,1);
+      }
+    });
+    console.log(this.items);
+    
+    this.itemObservable.next(this.items);
+  }
 }

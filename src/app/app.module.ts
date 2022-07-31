@@ -21,6 +21,8 @@ import { FoodItemListAdminComponent } from './food-item-list-admin/food-item-lis
 import { FoodItemAdminComponent } from './food-item-list-admin/food-item-admin/food-item-admin.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { AddItemComponent } from './add-item/add-item.component';
+import { UpdateItemComponent } from './update-item/update-item.component';
+import { RemoveItemComponent } from './remove-item/remove-item.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { AddItemComponent } from './add-item/add-item.component';
     FoodItemAdminComponent,
     ChangePasswordComponent,
     AddItemComponent,
+    UpdateItemComponent,
+    RemoveItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +53,7 @@ import { AddItemComponent } from './add-item/add-item.component';
     ModalModule.forRoot()
   ],
   providers: [],
+  entryComponents:[UpdateItemComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
